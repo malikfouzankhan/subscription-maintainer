@@ -1,25 +1,25 @@
-import { BrowserRouter, Routes, Route } from "react-router";
-import Dashboard from "./pages/Dashboard";
-import Login from "./pages/Login";
-import ProtectedRoute from "./components/ProtectedRoute";
-import { AuthProvider } from "./context/AuthContext";
+import FuzzyText from './components/FuzzyText';
+import Antigravity from './components/Antigravity';
 
 export default function App() {
   return (
-    <AuthProvider>
-      <BrowserRouter>
-        <Routes>
-          <Route path="/login" element={<Login />} />
-          <Route
-            path="/"
-            element={
-              <ProtectedRoute>
-                <Dashboard />
-              </ProtectedRoute>
-            }
-          />
-        </Routes>
-      </BrowserRouter>
-    </AuthProvider>
+    <div className='bg-black min-h-screen relative'>
+      <FuzzyText
+        baseIntensity={0.2}
+        hoverIntensity={0.5}
+        enableHover
+        className='relative top-20'
+      >
+        Subscription
+      </FuzzyText>
+      <FuzzyText
+        baseIntensity={0.2}
+        hoverIntensity={0.5}
+        enableHover
+        className='relative top-20 left-28'
+      >
+        Reminder
+      </FuzzyText>
+    </div>
   );
 }
